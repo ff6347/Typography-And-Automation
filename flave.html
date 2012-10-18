@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+/***********************
+website developed by
+by fabiantheblind
+Copyright © 2012  
+using:
+jekyllrb  
+twitter bootstrap
+subtlpatterns
+************************/
+-->
+<html>
+<head>
+    <head lang="en">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Auto-Typo" />
+    <meta name="author" content="fabiantheblind" />
+    <title>flave</title>
+
+ <!--    
+Bootsrap is included via less import
+ <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" /> -->
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="assets/css/syntax.css" type="text/css" />
+
+        <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+
+
+<script type="text/javascript" src="//use.typekit.net/jdb0zac.js"> </script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+           <script type="text/javascript" src="assets/js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap-carousel.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
+       <!--  // <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> -->
+        <!-- <script type="text/javascript" src="assets/js/lightbox.js"></script> -->
+     <script  type="text/javascript" src="assets/js/jquery.fittext.js"></script>
+
+        <script type="text/javascript" src="assets/js/main.js"></script>
+<!-- my jqeuries  <script src="assets/js/mediaqueries.js"></script> -->
+    <!-- Google Analytics -->
+
+
+<!-- my jqeuries
+        <script src="assets/js/mediaqueries.js"></script>
+-->
+
+</head>
+<body>
+<a href="https://github.com/fabiantheblind/auto-typo-adbe-id"><img src="assets/images/forkme_01.png" alt="Fork me on GitHub" id="forkme"></a>
+
+        <div class="container">
+<div class="subpage">
+<div class="row">
+    <div class="span8 offset2">
+    <h1><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/flave.png" alt="AVATAR" /> Hello</h1>
+
+<p>my name is Flavio / <a href="https://github.com/flave">Flave</a>. I’m an Interface Design Student at FH Potsdam.</p>
+
+<h3>Get_Text_Data.jsx</h3>
+
+<p><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Get_Text_Data.png" alt="TEASER" />
+This Script takes a Textfile and creates a Datafile from its content. The Datafile contains the Number of characters, Number of different punctuation marks (Dots, commas, quotes, colons, questionmarks, exclamationmarks and ellipsises) and an array of Wordlengths for each Sentence. Sadly the Datafile is not an actual JSON file. The toSource() function adds strange parentheseses around each Object. So for further use you will have to remove these parentheseses manually - or with the «find and replace» function of a texteditor. Also if you want to use the Datafile with one of my other Scripts you'll have to rename the Dataobject in the Datafile to data_one or data_two.<br/>
+<a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Get_Text_Data.jsx">Get_Text_Data</a></p>
+
+<h3>Simple_Barchart.jsx</h3>
+
+<p><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Simple_Barchart.png" alt="TEASER" />
+This script takes two datafiles (created with the Get_Text_Data.jsx script and editedmas described). They are included with an #include. If you generate your own datafiles you’ll have to change the filenames at the #include tag to your own files name.  From its data it creates two facing horizontal barcharts. Each Bar represents the number of characters of one sentence.<br/>
+<a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Simple_Barchart.jsx">Simple_Barchart</a></p>
+
+<h3>Words_Barchart.jsx</h3>
+
+<p><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Word_Barchart.png" alt="TEASER" />
+This script basicslly does the samething as the Simple_Barchart.jsx script. In addition the bars consist of stacked bars each representing the length of one word in the sentence.<br/>
+<a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Words_Barchart.jsx">Words_Barchart</a></p>
+
+<h3>Punctuation.jsx</h3>
+
+<p><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Punctuation.png" alt="TEASER" />
+This script also takes two datafiles. It uses the punctuation data to create a sorted collection of all the dots, commas, quotaion marks, and colons. The graphics for the punctuation are small images (2mm x 2mm) which have to be placed in the ~/Application/Indesign/Scripts/Script Panel/*  folder.<br/>
+<a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Punctuation.jsx">Punctuation</a></p>
+
+<h3>Simple_Barchart_plus.jsx</h3>
+
+<p><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Simple_Barchart_plus.png" alt="TEASER" />
+This Script combines the Simple_Barchart and the Punctuation. It places the Punctuation below the Barchart.<br/>
+<a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Simple_Barchart_plus.jsx">Simple_Barchart_plus</a></p>
+
+<h3>Punctuation_Barchart_plus.jsx</h3>
+
+<p><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Punctuation_Barchart_plus.png" alt="TEASER" />
+This Scipt basically does the same as the Simple_Barchart_Plus.jsx. In addition it  places the Punctuation of each Phrase right behind its bar.<br/>
+<a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/Flave/Punctuation_Barcharts_plus.jsx">Punctuation_Barcharts_plus</a></p>
+
+<h3>misc</h3>
+
+<p>Fell free to contact me if you have any suggestions for improvement pr tips on my bad and messy programming skills!</p>
+
+<h3>License</h3>
+
+<p>DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+Version 2, December 2004</p>
+
+<p>Copyright (C) 2012 USER NAME <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#102;&#108;&#97;&#x76;&#105;&#111;&#x67;&#x6f;&#114;&#x74;&#97;&#110;&#x61;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#108;&#97;&#118;&#105;&#111;&#x67;&#111;&#114;&#x74;&#97;&#x6e;&#97;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a><br/>
+Everyone is permitted to copy and distribute verbatim or modified copies of this license document, and changing it is allowed as long as the name is changed.</p>
+
+<p>DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE<br/>
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION<br/>
+http://sam.zoy.org/wtfpl/</p>
+
+<p>`0. You just DO WHAT THE FUCK YOU WANT TO.</p>
+
+</div>
+</div>
+<div class="row"> 
+        <div class="span8 offset2" id="sublinks">
+<a href="anitamei.html" class=""><div class="span1" id="mingal">
+				<img src="assets/images/avatar/anitamei.png" class="avatar">
+      			</div></a><a href="coerv.html" class=""><div class="span1" id="mingal">
+				<img src="assets/images/avatar/coerv.png" class="avatar">
+      			</div></a><a href="fabiantheblind.html" class=""><div class="span1" id="mingal">
+				<img src="assets/images/avatar/fabiantheblind.png" class="avatar">
+      			</div></a><a href="ferdinandp.html" class=""><div class="span1" id="mingal">
+				<img src="assets/images/avatar/ferdinandp.png" class="avatar">
+      			</div></a><a href="flave.html" class=""><div class="span1" id="mingal">
+				<img src="assets/images/avatar/flave.png" class="avatar">
+      			</div></a><a href="johannahoeflich.html" class=""><div class="span1" id="mingal">
+				<img src="assets/images/avatar/johannahoeflich.png" class="avatar">
+      			</div></a><a href="natael.html" class=""><div class="span1" id="mingal">
+				<img src="assets/images/avatar/natael.png" class="avatar">
+      			</div></a><a href="skaim.html" class=""><div class="span1" id="mingal">
+				<img src="assets/images/avatar/skaim.png" class="avatar">
+      			</div></a>
+</div>
+</div>
+<!-- <div class="row">
+        <div class="span1 offset2" id="back">
+<a href="/">&lArr;</a> -->
+</div>
+</div>
+</div>
+</div>
+   
+    <br>
+<div class="container" id="footer">
+<div class="row">
+<div class="span8 offset2">
+    <br>
+    <a href="http://fabiantheblind.github.com/auto-typo-adbe-id/">This site</a> is generated with <a href="http://pages.github.com">gh-pages</a>, <a href="http://jekyllrb.com">jekyll</a> and <a href="http://twitter.github.com/bootstrap/index.html">twitter bootstrap</a> by <a href="https://github.com/fabiantheblind">fabiantheblind</a>. Get the source files <a href="https://github.com/fabiantheblind/auto-typo-adbe-id/tree/gh-pages">over here</a></div>
+    </div>    
+</div>
+    <br>
+    <br>
+    <br>
+</body>
+</html>
