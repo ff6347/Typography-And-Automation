@@ -22,8 +22,10 @@ subtlpatterns
  <!--    
 Bootsrap is included via less import
  <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" /> -->
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
-        <link rel="stylesheet" href="assets/css/syntax.css" type="text/css" />
+     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+
+         <link rel="stylesheet" href="assets/css/syntax.css" type="text/css" />
+
 
         <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
 
@@ -65,29 +67,14 @@ Bootsrap is included via less import
 
 <ul>
 <li>Gather some markdown documents containing your text and the highlights (represented by bold text)</li>
-<li>Convert them into HTML using the following tool by Daring Fireball http://goo.gl/6rUzZ
+<li>Convert them into HTML using <a href="http://daringfireball.net/projects/markdown/dingus">this tool by Daring Fireball</a>
 (just paste the markdown content of your documents underneath each other in the same box and click "Convert")</li>
-<li>Copy the HTML output and paste it into our custom built tool below to extract the highlight data for use in InDesign<br/>
-Example text:</li>
+<li>Copy the HTML output and paste it into our custom built tool below to extract the highlight data for use in InDesign</li>
 </ul>
 
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna <span class="nt">&lt;strong&gt;</span>aliqua<span class="nt">&lt;/strong&gt;</span>. Ut enim ad minim veniam,
-quis nostrud <span class="nt">&lt;strong&gt;</span>exercitation<span class="nt">&lt;/strong&gt;</span> ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute <span class="nt">&lt;strong&gt;</span>irure<span class="nt">&lt;/strong&gt;</span> dolor in <span class="nt">&lt;strong&gt;</span>reprehenderit<span class="nt">&lt;/strong&gt;</span> in voluptate velit esse
-cillum dolore eu fugiat nulla <span class="nt">&lt;strong&gt;</span>pariatur<span class="nt">&lt;/strong&gt;</span>. Excepteur sint <span class="nt">&lt;strong&gt;</span>occaecat<span class="nt">&lt;/strong&gt;</span> cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span class="nt">&lt;/p&gt;</span>
-</code></pre>
-</div>
-
-
-
-
-<!-- target area in <body></body> -->
-
-
-<div id="toarray_wrap"> <style type="text/css">
+<div id="toarray_wrap">
+    <style type="text/css">
     #toarray_wrap {
     max-width: 620px;
     margin: 0 auto;
@@ -99,7 +86,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span cl
     font-family: monospace;
     background-color: rgba(193,213,250,0.8);
     padding: 5px 10px 6px 10px;
-    margin: 14px 0 66px 0;
+    margin: 14px 0 10px 0;
+    list-style: none;
 }
 #toarray_textarea {
     width: 100%;
@@ -107,11 +95,11 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span cl
     font-size: 16px;
     font-family: "Helvetica Neue", sans-serif;
     color: #333;
-    margin: 40px 0 5px 0;
+    margin: 20px 0 5px 0;
     padding: 1.5%;
 }
 #toarray_button {
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 #toarray_button span {
     padding: 0 4px 0 4px;
@@ -120,13 +108,18 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span cl
     display: none;
 }
 </style>
-    <textarea id="toarray_textarea" rows="14" cols="80" placeholder="Paste HTML here; e.g. <p>I would begin the analysis by saying that a <strong>commodity has value</strong> and a gift does not.</p>"></textarea>
+    <textarea id="toarray_textarea" rows="14" cols="80" placeholder="Paste HTML here">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna <strong>aliqua</strong>. Ut enim ad minim veniam, quis nostrud <strong>exercitation</strong> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute <strong>irure</strong> dolor in <strong>reprehenderit</strong> in voluptate velit esse cillum dolore eu fugiat nulla <strong>pariatur</strong>. Excepteur sint <strong>occaecat</strong> cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </textarea>
     <button id="toarray_button"><span>Extract Highlight Data</span></button>
     <div id="mdcontent"></div>
     <ul id="toarray_ul" >
         <li>var highlight_data =  [];</li>
     </ul>
 </div>
+
+
 
 
 <script type="text/javascript">
@@ -149,15 +142,12 @@ $("#toarray_button").click(function() {
 </script>
 
 
-<p>Include widget? <a href="https://gist.github.com/3923596">https://gist.github.com/3923596</a><br/>
-You can also clone the widget with <a href="http://git-scm.com">Git</a> by running:</p>
+<p>You can also clone the widget with <a href="http://git-scm.com">Git</a> by running:</p>
 
 <div class="highlight"><pre><code class="sh">git clone git://gist.github.com/3923596.git gist-3923596
 </code></pre>
 </div>
 
-
-<p>Otherwise please link to <a href="http://www.felixharle.com/extract/">http://www.felixharle.com/extract/</a></p>
 
 <ul>
 <li>Copy the output of our tool and paste it into the marked area in highlight.jsx (make sure to replace the text we used with the one you want to use as well)</li>
@@ -165,11 +155,12 @@ You can also clone the widget with <a href="http://git-scm.com">Git</a> by runni
 </ul>
 
 
-<h3>highlight.jsx</h3>
+<h3><a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/felix_prak/highlight.jsx">highlight</a></h3>
 
-<p><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/felix_prak/highlight_teaser_fp.png" alt="TEASER" />
-Basically, the script creates a text frame for each highlight and sets it's opacity to a low level. All these text frames are then stacked over each other, which results in adjoining transparencies in places, that were highlighted by more than one person.
-<a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/felix_prak/highlight.jsx">link to your script</a></p>
+<p><img src="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/felix_prak/highlight_teaser_fp.png" alt="TEASER" /></p>
+
+<p>Basically, the script creates a text frame for each highlight and sets it's opacity to a low level. All these text frames are then stacked over each other, which results in adjoining transparencies in places that were highlighted by more than one person.
+<a href="https://raw.github.com/fabiantheblind/auto-typo-adbe-id/master/felix_prak/highlight.jsx">highlight.jsx</a></p>
 
 <h3>Note</h3>
 
@@ -185,29 +176,48 @@ Everyone is permitted to copy and distribute verbatim or modified copies of this
 
 </div>
 </div>
-<div class="row"> 
-        <div class="span8 offset2" id="sublinks">
-<a href="anitamei.html" class=""><div class="span1" id="mingal">
+<div class="row">
+    <div  id="sublinks"> 
+
+<!-- <div class="span2 offset1" id="home">
+<a href="/">
+    <div id="sublinks_span">
+    <img src="assets/images/a_auto-typo_avatar.png" >
+    </div>
+</a>
+</div>
+ -->
+        <div class="span8 offset2">
+<div class="contributers">
+    <a href="/" class="contribslink">
+        <div class="contrib_span1" id="mingal">
+        <img src="assets/images/a_auto-typo_avatar.png" class="avatar">
+    </div>
+    </a>
+        <a href="anitamei.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/anitamei.png" class="avatar">
-      			</div></a><a href="coerv.html" class=""><div class="span1" id="mingal">
+      			</div></a><a href="ce0311.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/ce0311.png" class="avatar">
+      			</div></a><a href="coerv.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/coerv.png" class="avatar">
-      			</div></a><a href="fabiantheblind.html" class=""><div class="span1" id="mingal">
+      			</div></a><a href="fabiantheblind.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/fabiantheblind.png" class="avatar">
-      			</div></a><a href="felix_prak.html" class=""><div class="span1" id="mingal">
+      			</div></a><a href="felix_prak.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/felix_prak.png" class="avatar">
-      			</div></a><a href="ferdinandp.html" class=""><div class="span1" id="mingal">
+      			</div></a><a href="ferdinandp.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/ferdinandp.png" class="avatar">
-      			</div></a><a href="flave.html" class=""><div class="span1" id="mingal">
+      			</div></a><a href="flave.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/flave.png" class="avatar">
-      			</div></a><a href="johannahoeflich.html" class=""><div class="span1" id="mingal">
+      			</div></a><a href="johannahoeflich.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/johannahoeflich.png" class="avatar">
-      			</div></a><a href="natael.html" class=""><div class="span1" id="mingal">
+      			</div></a><a href="natael.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/natael.png" class="avatar">
-      			</div></a><a href="skaim.html" class=""><div class="span1" id="mingal">
+      			</div></a><a href="skaim.html" class="contribslink"><div class="contrib_span1" id="mingal">
 				<img src="assets/images/avatar/skaim.png" class="avatar">
       			</div></a>
 </div>
-</div>
+    </div>
+</div></div>
 <!-- <div class="row">
         <div class="span1 offset2" id="back">
 <a href="/">&lArr;</a> -->
@@ -221,7 +231,7 @@ Everyone is permitted to copy and distribute verbatim or modified copies of this
 <div class="row">
 <div class="span8 offset2">
     <br>
-    <a href="http://fabiantheblind.github.com/Typography-And-Automation/">This site</a> is generated with <a href="http://pages.github.com">gh-pages</a>, <a href="http://jekyllrb.com">jekyll</a> and <a href="http://twitter.github.com/bootstrap/index.html">twitter bootstrap</a> by <a href="https://github.com/fabiantheblind">fabiantheblind</a>. Get the source files <a href="https://github.com/fabiantheblind/auto-typo-adbe-id/tree/gh-pages">over here</a></div>
+    This site is generated with <a href="http://pages.github.com">gh-pages</a>, <a href="http://jekyllrb.com">jekyll</a> and <a href="http://twitter.github.com/bootstrap/index.html">twitter bootstrap</a> by <a href="https://github.com/fabiantheblind">fabiantheblind</a>. Get the source files <a href="https://github.com/fabiantheblind/auto-typo-adbe-id/tree/gh-pages">over here</a></div>
     </div>    
 </div>
     <br>
