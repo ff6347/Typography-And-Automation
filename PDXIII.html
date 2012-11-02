@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--
+/***********************
+website developed by
+by fabiantheblind
+Copyright © 2012  
+using:
+jekyllrb  
+twitter bootstrap
+subtlpatterns
+************************/
+-->
+<html>
+<head>
+    <head lang="en">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content=PDXIII Font Fun Friday />
+    <meta name="author" content="fabiantheblind" />
+    <title>PDXIII Font Fun Friday</title>
+
+ <!--    
+Bootsrap is included via less import
+ <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" /> -->
+     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+
+         <link rel="stylesheet" href="assets/css/syntax.css" type="text/css" />
+
+
+        <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+
+
+<script type="text/javascript" src="//use.typekit.net/jdb0zac.js"> </script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+           <script type="text/javascript" src="assets/js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap-carousel.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
+       <!--  // <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> -->
+        <!-- <script type="text/javascript" src="assets/js/lightbox.js"></script> -->
+     <script  type="text/javascript" src="assets/js/jquery.fittext.js"></script>
+
+        <script type="text/javascript" src="assets/js/main.js"></script>
+
+<!-- my jqeuries  <script src="assets/js/mediaqueries.js"></script> -->
+<!-- Google Analytics -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35859624-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<a href="https://github.com/fabiantheblind/auto-typo-adbe-id"><img src="assets/images/forkme_01.png" alt="Fork me on GitHub" id="forkme"></a>
+
+        <div class="container">
+<div class="subpage">
+<div class="row">
+    <div class="span10 offset1">
+    <h1><img src="assets/images/additional/PDXIII-Avatar.png" alt="AVATAR" /> Hello!</h1>
+
+<p>I am <a href="http://about.me/PDXIII">PDXIII</a> &amp; and this is</p>
+
+<h3>Font Fun Friday!</h3>
+
+<p><img src="assets/images/additional/FFF-Title.png" alt="FFF-Title" /></p>
+
+<h4>A Adobe Indesign script for font nerds.</h4>
+
+<h3>What's that all about?</h3>
+
+<p>When you scribble a font, you quickly come to a point where you need a base line or a guide for the x height and for the descenders &hellip;<br/>
+But where to place them? This decision takes big influence on the whole font design. So why don't you check out the guides of some famous fonts?<br/>
+This script creates a small booklet with the metrics of 22 fonts and for each font 96 fields for 96 characters (which is a little more than a German basic keyboard layout).</p>
+
+<h3>Install this script</h3>
+
+<p>Clone thie repository int your <code>~/Library/Preferences/Adobe InDesign/Version 7.5/en_GB/Scripts/Scripts Panel/</code> folder or download the zipped files and unzip them to this location.</p>
+
+<h3>Data Sources</h3>
+
+<p>There are three files which provied data. The script depends on <em>GlyphList-Unicode.json</em> and <em>FontList.json</em>. But first let's take a look on the file where everthing started:</p>
+
+<h4>GlyphList.txt</h4>
+
+<p>This files contains 96 characters separated by a break row (or '\r'). The original file contains: <em>a, ä, b, c, d, e, f, g, h, i, j, k, l, m, n, o, ö, p, q, r, s, t, u, ü, v, w, x, y, z, ß, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ,, ., -, `, +, #, ^, @, A, Ä, B, C, D, E, F, G, H, I, J, K, L, M, N, O, Ö, P, Q, R, S, T, U, Ü, V, W, X, Y, Z, ?, !, ", §, $, %, &amp;, /, (, ), =, ;, :, _, backtick, * , ', °, €.</em></p>
+
+<p>The first 48 will be displayed on the left side of the booklet, the other on the right side.</p>
+
+<p>And looks like this:</p>
+
+<div class="highlight"><pre><code class="text">a
+ä
+b
+c
+… (the other 91 characters)
+€
+</code></pre>
+</div>
+
+
+<p><strong>Note: If you change these characters, please be sure to have 96, because the layout is optimized for this amount!</strong></p>
+
+<p>When you have done any changes in this file you need to format it into an <em>.json</em> file and add the unicode information for each character. Have fun! Just kidding. For god sake I wrote the python script <em>ConvertToUnicodeIntoJSON.py</em>. So open a terminal, change directory to <code>~/Library/Preferences/Adobe InDesign/Version 7.5/en_GB/Scripts/Scripts Panel/FontFunFriday/</code><br/>
+(be careful: the 'en_GB' depends on the language of your version of Indesign, would be 'de_DE' if you run a German version on your system) and type in <code>python ConvertToUnicodeIntoJSON.py</code> and the <em>.txt</em> is parsed into a <em>.json</em> file with all the additional information under the name <em>GlyphList-Unicode.json</em>.</p>
+
+<h4>GlyphList-Unicode.json</h4>
+
+<p>In the last chapter you read how to generate this file, but what's inside?</p>
+
+<p>Let's have a look:</p>
+
+<div class="highlight"><pre><code class="js"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;glyph&quot;</span><span class="o">:</span> <span class="s2">&quot;a&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;LATIN SMALL LETTER A&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;number&quot;</span><span class="o">:</span> <span class="s2">&quot;0061&quot;</span>
+  <span class="p">}</span><span class="o">,</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;glyph&quot;</span><span class="o">:</span> <span class="s2">&quot;ä&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;LATIN SMALL LETTER A WITH DIAERESIS&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;number&quot;</span><span class="o">:</span> <span class="s2">&quot;00e4&quot;</span>
+  <span class="p">}</span><span class="o">,</span>
+  <span class="err">…</span> <span class="p">(</span><span class="nx">I</span> <span class="nx">think</span> <span class="nx">you</span><span class="err">&#39;</span><span class="nx">ll</span> <span class="nx">get</span> <span class="nx">the</span> <span class="nx">point</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;glyph&quot;</span><span class="o">:</span> <span class="s2">&quot;€&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;EURO SIGN&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;number&quot;</span><span class="o">:</span> <span class="s2">&quot;20ac&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre>
+</div>
+
+
+<p><strong>Note: If you edit this file, don't destroy the .json format. If this happends only god can save you! Naw, just run the python script from the last chapter.</strong></p>
+
+<h4>FontList.json</h4>
+
+<p>In this file keeps the fonts with their metrics information. This collection contains the information of these fonts: <em>Aachen Std, Adobe Garamond Pro, Andale Mono, Arial, Berthold Akzidenz Grotesk BE, Bickham Script Pro, Comic Sans MS, Cooper Std, Courier New, Georgia, Helvetica Neue, ITC Avant Garde Gothic Std Medium, Impact, Livory Regular, Meslo LG L DZ, Myriad Pro, Neutra Text, Novel Pro, Rooney Regular, Times New Roman, Trajan Pro.</em></p>
+
+<p>Take a look:</p>
+
+<div class="highlight"><pre><code class="js"><span class="p">[</span>
+<span class="p">{</span>
+  <span class="s2">&quot;FontName&quot;</span><span class="o">:</span> <span class="s2">&quot;Aachen Std&quot;</span><span class="o">,</span> 
+  <span class="s2">&quot;HkxpArray&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="mf">1.0</span><span class="o">,</span> 
+    <span class="mf">1.0</span><span class="o">,</span> 
+    <span class="mf">0.73512252042006998</span><span class="o">,</span> 
+    <span class="o">-</span><span class="mf">0.26371061843640609</span>
+  <span class="p">]</span>
+<span class="p">}</span><span class="o">,</span> 
+<span class="p">{</span>
+  <span class="s2">&quot;FontName&quot;</span><span class="o">:</span> <span class="s2">&quot;Adobe Garamond Pro&quot;</span><span class="o">,</span> 
+  <span class="s2">&quot;HkxpArray&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="mf">1.0</span><span class="o">,</span> 
+    <span class="mf">1.0784313725490196</span><span class="o">,</span> 
+    <span class="mf">0.59879336349924583</span><span class="o">,</span> 
+    <span class="o">-</span><span class="mf">0.38914027149321267</span>
+  <span class="p">]</span>
+<span class="p">}</span><span class="o">,</span> 
+<span class="err">…</span> <span class="p">(</span><span class="nx">Yes</span><span class="o">,</span> <span class="nx">here</span> <span class="nx">are</span> <span class="nx">more</span> <span class="nx">fonts</span><span class="o">!</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="s2">&quot;FontName&quot;</span><span class="o">:</span> <span class="s2">&quot;Trajan Pro&quot;</span><span class="o">,</span> 
+  <span class="s2">&quot;HkxpArray&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="mf">1.0</span><span class="o">,</span> 
+    <span class="mf">0.84993359893758302</span><span class="o">,</span> 
+    <span class="mf">0.84993359893758302</span><span class="o">,</span> 
+    <span class="o">-</span><span class="mf">0.0039840637450199202</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+<span class="p">]</span>
+</code></pre>
+</div>
+
+
+<p>There are two ways to make your own <em>FontList.json</em>.</p>
+
+<ol>
+<li><p>You open the font of your choice in the font editor software of your choice or you can try Adobe Illustrator. Then messure the height of the <em>H, k and x</em> and the lowest point of <em>p</em>. Then divide every value through the height of <em>H</em> and put these values into the <code>HkxpArray</code>.</p></li>
+<li><p>You open your full version of <a href="http://glyphsapp.com">Glyphs App</a> clone my <a href="https://github.com/PDXIII/Glyphs-Scripts">Glyphs-Scripts Repository</a> into your Glyphs script folder under <code>~/Library/Application Support/Glyphs/Scripts/</code> open all the fonts you want the metrics from and run the <em>ExportHkxpMetrics.py</em> script. It exports all the metrics the way it should be into a file on your desktop named <em>Metrics.json</em>. All need to do in addition is to rename it into <em>FontList.json</em> and move it into your <code>~/Library/Preferences/Adobe InDesign/Version 7.  5/en_GB/Scripts/Scripts Panel/FontFunFriday/</code> folder.</p></li>
+</ol>
+
+
+<p>The second way has a longer discription but is the faster way (and requires a full version of <a href="http://glyphsapp.com">Glyphs App</a>).</p>
+
+<h3>Open Adobe Indesign and run the script</h3>
+
+<p>I am sure you know how! If you copied or cloned the repository into the right folder, it will appear in your skript panel under <em>FontFunFriday.jsx</em>. A doubleclick will start the script.</p>
+
+<h3>Unicode Information</h3>
+
+<p><img src="assets/images/additional/dialog.png" alt="dialog" /></p>
+
+<p>After starting the script a pop up will appear asking how you like the unicode information should be displayed. There are two options:</p>
+
+<p><img src="assets/images/additional/tile1.png" alt="tile1" /></p>
+
+<ol>
+<li><code>a u+00061</code> will make a tile for scribbling for every character in the GlyphList with the character itself and the unicode number below.</li>
+</ol>
+
+
+<p><img src="assets/images/additional/tile2.png" alt="tile2" /></p>
+
+<ol>
+<li><code>latin small letter a</code> will make a tile for scribbling, too, but puts the unicode name inside this tile.</li>
+</ol>
+
+
+<p>Try them both!</p>
+
+<h3>Grid &amp; Masterspreads</h3>
+
+<p><img src="assets/images/additional/grid.png" alt="grid" /></p>
+
+<p>In the first seconds while the script is running you can see how the scribble tiles are buid and placed on the page. The grid contains 6 columns and 8 rows. The size of the whole tile (inclusive the textboxes below) is 23 x 20 mm. The margins are given the gutter is calculated. There are two masterspreads. One with just the margins <em>Master-A</em> and a second one containing the tiles <em>Master-B</em>.</p>
+
+<p><strong>Note: Feel free to change the values in the script and try out your own layout, but be awear that my layout is optimized for this given amout of characters.</strong></p>
+
+<h3>Lines and Metrics Information</h3>
+
+<p>After the masters are finished, the script reads the <em>FontList.json</em> and makes for each font two facing pages with a whole set of scribble tiles (using <em>Master-B</em>). It reads the <em>HkxkArray</em> of the current font and calculates the vertikal positions of the guide lines.</p>
+
+<h4>The HkxpArray</h4>
+
+<p><img src="assets/images/additional/metrics.png" alt="metrics" /></p>
+
+<p>I already mentioned how to calculate the values for the <em>HkxpArray</em>, but let's digg a little deeper.</p>
+
+<p>When I first thought about getting the metrics out of a font, I wrote a Glyphs App script (<a href="https://github.com/PDXIII/Glyphs-Scripts#exportbasicmetricspy">ExportBasicMetrics.py</a>), which exports the metrics from Glyphs' font information window. Which is a kind of tricky in several points:</p>
+
+<ol>
+<li><p>The values are absolute. Let's take look on the Mariad Pro. This font's metrics look like this <code>ascender: 750.0, capital height: 674.0, x height: 484.0, descender: -250.0</code>.
+All values describe the vertical position on a 1.000 pt high work area. Though, when you want to use these values for guide lines on work area with a different height, you need to set them into relation to each other.</p></li>
+<li><p>Some true type fonts (.ttf) seem to have a work area around 2.000 pt e.g.
+<code>Arial: ascender: 1491.0, capHeight: 1467.0, xHeight: 1062.0, descender: -431.0</code>.</p></li>
+<li><p>Some true type fonts seem to have a work area around 1.000 pt but the ascenders was designed on a 2.000 pt work area e.g.
+<code>Georgia: ascender: 1549.0, capHeight: 700.0, xHeight: 500.0, descender: -444.0</code>.</p></li>
+<li><p>The descender value is usually not the vertical position of the lowest point in a descender character, it's even below this point.</p></li>
+</ol>
+
+
+<p>I hope you see the problem! The data we will get this way is not consistent. We need to put them in relation, and the escaping desender value is a real fuck up!</p>
+
+<p>Solving the relation problem I used a format I found in an old photo type catalog from <a href="http://de.wikipedia.org/wiki/H._Berthold_AG">Berthold</a>. They described like this <code>Berthold Akzidenz Grotesk BE: H: 1, k: 0.998, 0.666, -0.315</code>. They set every value into relation to the height of <em>H</em>. That was what I needed and I preferre using a historical and typographical format instead of inventing my own which serves the same purpose.</p>
+
+<p>For the other part of the problem I decided the best way of doing it is to messure on my own. And because of I am some lazy guy I wrote the script <a href="https://github.com/PDXIII/Glyphs-Scripts#exporthkxpmetricpy">ExportHkxpMetrics.py</a> wich takes care of the messurment and calculation.</p>
+
+<p>That's the story behind the <em>HkxpArray</em>!</p>
+
+<h3>Styles</h3>
+
+<p><img src="assets/images/additional/masters.png" alt="masters" /> <img src="assets/images/additional/paraStyles.png" alt="paraStyles" /> <img src="assets/images/additional/objectStyles.png" alt="objectStyles" /></p>
+
+<p>When the script is finished you'll have a document with 44 pages. One for the front and one for the back with <em>Master-A</em> applied and 42 with <em>Master-B</em> applied for scribbling containing the guide lines. When you take a look at the style palettes you'll see that avery kind of object or paragraph has some kind of style applied. Though it's quite easy to change the apperence of your document. If you want another font for your layout, then just make changes in the paragraph stlye <em>BasicFontStyle</em>. I tried to keep the basic style simple and undistractive.</p>
+
+<p>Feel free to find your own solution
+<strong>&amp; have a Fun Font Friday!</strong></p>
+
+<h3>Thanx!</h3>
+
+<ul>
+<li> <a href="https://github.com/fabiantheblind/auto-typo-adbe-id">fabiantheblind</a> for this lection!</li>
+<li> <a href="http://www.kahrel.plus.com/indesign/scriptui.html">"ScriptUI for dummies"</a> by Peter Kahrel.</li>
+<li> <a href="http://glyphsapp.com">Glyphs App</a> for being scriptable and beautiful.</li>
+<li> <a href="https://github.com/schriftgestalt">schriftgestalt</a> for example scripts for Glyphs App.</li>
+<li> <a href="https://github.com/mekkablue">mekkablue</a> for example scripts for Glyphs App, too.</li>
+</ul>
+
+
+<h3>License</h3>
+
+<p>Copyright (c) 2012 Peter Sekan aka PDXIII</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+</div>
+</div>
+<div class="row">
+    <div  id="sublinks"> 
+
+<!-- <div class="span2 offset1" id="home">
+<a href="/">
+    <div id="sublinks_span">
+    <img src="assets/images/a_auto-typo_avatar.png" >
+    </div>
+</a>
+</div>
+ -->
+<div class="span8 offset2" id="headlined">
+<div class="contributers">
+    <a href="/Typography-And-Automation/" class="contribslink">
+        <div class="contrib_span1" id="mingal">
+        <img src="assets/images/a_auto-typo_avatar.png" class="avatar">
+    </div>
+    </a>
+        <a href="anitamei.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/anitamei.png" class="avatar">
+      			</div></a><a href="ce0311.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/ce0311.png" class="avatar">
+      			</div></a><a href="coerv.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/coerv.png" class="avatar">
+      			</div></a><a href="fabiantheblind.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/fabiantheblind.png" class="avatar">
+      			</div></a><a href="felix_prak.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/felix_prak.png" class="avatar">
+      			</div></a><a href="ferdinandp.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/ferdinandp.png" class="avatar">
+      			</div></a><a href="flave.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/flave.png" class="avatar">
+      			</div></a><a href="johannahoeflich.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/johannahoeflich.png" class="avatar">
+      			</div></a><a href="natael.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/natael.png" class="avatar">
+      			</div></a><a href="PDXIII.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/PDXIII.png" class="avatar">
+      			</div></a><a href="schlompf.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/schlompf.png" class="avatar">
+      			</div></a><a href="skaim.html" class="contribslink"><div class="contrib_span1" id="mingal">
+				<img src="assets/images/avatar/skaim.png" class="avatar">
+      			</div></a>
+</div>
+    </div>
+</div></div>
+<!-- <div class="row">
+        <div class="span1 offset2" id="back">
+<a href="/">&lArr;</a> -->
+</div>
+</div>
+</div>
+</div>
+   
+    <br>
+<div class="container" id="footer">
+<div class="row">
+<div class="span8 offset2">
+    <br>
+   <p> This site is generated with <a href="http://pages.github.com">gh-pages</a>, <a href="http://jekyllrb.com">jekyll</a> and <a href="http://twitter.github.com/bootstrap/index.html">twitter bootstrap</a> by <a href="http://fabiantheblind.info">fabiantheblind</a>.<br>Get the source files <a href="https://github.com/fabiantheblind/auto-typo-adbe-id/tree/gh-pages">over here</a></p>
+  </div>
+    </div>    
+</div>
+    <br>
+    <br>
+    <br>
+</body>
+</html>
