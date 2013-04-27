@@ -1,9 +1,9 @@
 Typography-And-Automation
 =========================
 
-This is the project documentation 4 --> https://github.com/fabiantheblind/auto-typo-adbe-id  
-See the documntation there --> http://fabiantheblind.github.io/Typography-And-Automation/
-And the wiki over there --> https://github.com/fabiantheblind/extendscript/wiki
+- This is the project documentation 4 --> https://github.com/fabiantheblind/auto-typo-adbe-id  
+- See the documntation there --> http://fabiantheblind.github.io/Typography-And-Automation/  
+- And the wiki over there --> https://github.com/fabiantheblind/extendscript/wiki  
 
 Copyright (c)  2012 - 2013 Fabian "fabiantheblind" Morón Zirfas  
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software  without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to  permit persons to whom the Software is furnished to do so, subject to the following conditions:  
